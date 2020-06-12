@@ -38,14 +38,31 @@ $(document).ready(function () {
     </header>
   `);
 
+  $('#content #git_msg').contextmenu(function (e) {
+    e.preventDefault();
+
+    copyToClipboard(git_msg);
+    $.toast({
+      position: 'top-right',
+      stack: false,
+      hideAfter: 1000,
+      text: '偷偷复制到剪贴板啦~'
+    });
+  });
 
   $('#content #git_msg').click(function () {
     var text = `${git_action}: ${git_msg}`;
+    var versionText = $('.fixed-version').text();
+    if (versionText.includes('.')){
+      var version = versionText.split(':')[1].toLowerCase();
+      text = `${git_action}(${version}): ${git_msg}`;
+    }
+
     copyToClipboard(text);
     $.toast({
       icon: 'success',
       heading: '复制成功',
-      position: 'top-center',
+      position: 'top-right',
       stack: false,
       hideAfter: 1000,
       text
