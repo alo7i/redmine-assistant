@@ -33,20 +33,22 @@ $(document).ready(function () {
         <span class="git_msg">${git_msg}</span>
       </div>
       <div class="right">
-        点击可以复制内容到简体板
+        [ 点击/右键 ] 可以复制内容到简体板
       </div>
     </header>
   `);
 
   $('#content #git_msg').contextmenu(function (e) {
+    var text = git_msg;
     e.preventDefault();
-
-    copyToClipboard(git_msg);
+    copyToClipboard(text);
     $.toast({
+      icon: 'info',
+      heading: '复制成功',
       position: 'top-right',
       stack: false,
       hideAfter: 1000,
-      text: '偷偷复制到剪贴板啦~'
+      text
     });
   });
 
