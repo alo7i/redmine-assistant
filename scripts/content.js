@@ -22,15 +22,15 @@ $(document).ready(function () {
   var issue_title = $('#content h2').text();
   var [issue_bug, id] = issue_title.split(' #')
   var message = $('#content h3').text();
-  var issue_prefix = `${GIT_ACTION_MAP[issue_bug] || 'feat'}`
-  var issue_msg = `${message} - (REDMINE-${id})`;
+  var git_action = `${GIT_ACTION_MAP[issue_bug] || 'feat'}`
+  var git_msg = `${message} - (REDMINE-${id})`;
 
   $('#content h2').after(`
     <header id="git_msg" class="issue tracker-58 1-2 priority-4 priority-default details left">
       <div class="left">
-        <span class="issue_prefix" data-git-action="${issue_prefix}">${issue_prefix}</span>
+        <span class="git_action" data-git-action="${git_action}">${git_action}</span>
         :
-        <span class="issue_msg">${issue_msg}</span>
+        <span class="git_msg">${git_msg}</span>
       </div>
       <div class="right">
         点击可以复制内容到简体板
@@ -40,9 +40,8 @@ $(document).ready(function () {
 
 
   $('#content #git_msg').click(function () {
-    var text = `${issue_prefix}: ${issue_msg}`;
+    var text = `${git_action}: ${git_msg}`;
     copyToClipboard(text);
-
     $.toast({
       icon: 'success',
       heading: '复制成功',
@@ -52,4 +51,5 @@ $(document).ready(function () {
       text
     });
   });
+
 });

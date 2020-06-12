@@ -6,9 +6,12 @@
   background: #f9f9f9;
   transition: all 0.3s;
 }
-
+#git_msg:hover {
+  border:1px solid #ccc;
+  background: #f1f1f1;
+}
 #git_msg:active{
-  background: #ddd;
+  background: #eee;
 }
 
 #git_msg>.left{
@@ -21,14 +24,13 @@
   font-size: 12px;
 }
 
-.issue_prefix{
+.git_action{
   display: inline-block;
   width: auto;
   min-width: 1em;
   margin-top: 3px;
   padding: 1px 8px;
   border-radius: 3px;
-
   color: #fff;
   font-size: .86em;
   font-weight: bold;
@@ -37,20 +39,10 @@
 }
 
 
-.issue_prefix[data-git-action="feat"]{
+.git_action[data-git-action="feat"]{
   background-color: #584492;
 }
 
-.issue_prefix[data-git-action="fix"]{
+.git_action[data-git-action="fix"]{
   background-color: #e74c3c;
-}
-
-.btn-copy{
-  padding-left: 28px;
-  background-position: 8px 50%;
-  display: inline-block;
-  padding: 3px 8px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  background-color: #fafafa;
 }
