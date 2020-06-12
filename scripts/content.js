@@ -33,7 +33,7 @@ $(document).ready(function () {
         <span class="git_msg">${git_msg}</span>
       </div>
       <div class="right">
-        [ 点击/右键 ] 可以复制内容到简体板
+        <span class="icon icon-copy">[ 点击/右键 ]</span> 可以复制内容到简体板
       </div>
     </header>
   `);
