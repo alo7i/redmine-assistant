@@ -1,0 +1,14 @@
+{
+  "name": "@alo7i/redmine-assistant",
+  "version": "1.0.0",
+  "description": "Redmine assistant.",
+  "homepage": "https://github.com/alo7i/redmine-assistant",
+  "author": {
+    "name": "afeiship",
+    "email": "1290657123@qq.com"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
