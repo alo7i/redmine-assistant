@@ -7,6 +7,9 @@
     "name": "afeiship",
     "email": "1290657123@qq.com"
   },
+  "scripts": {
+    "build": "mv ../redmine-assistant.* dist && rm -rf dist/redmine-assistant.pem"
+  },
   "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
