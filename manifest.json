@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "redmine-assistant",
+  "version": "0.0.1",
+  "description": "Redmine assistant.",
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "96": "images/icon-96.png",
+    "128": "images/icon-128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon-19.png",
+      "38": "images/icon-38.png"
+    },
+    "default_title": "redmine-assistant"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://redmine.saybot.net/*"
+      ],
+      "js": [
+        "lib/jquery/jquery.min.js",
+        "lib/jquery/jquery.toast.min.js",
+        "scripts/content.js"
+      ],
+      "css": [
+        "lib/style.css",
+        "lib/jquery/jquery.toast.min.css"
+      ]
+    }
+  ],
+  "content_security_policy": "style-src 'self' 'unsafe-inline';script-src 'self' 'unsafe-eval' https://cdn.bootcss.com; object-src 'self' ;"
+}

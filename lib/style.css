@@ -1,0 +1,56 @@
+#git_msg{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  cursor: pointer;
+  background: #f9f9f9;
+  transition: all 0.3s;
+}
+
+#git_msg:active{
+  background: #ddd;
+}
+
+#git_msg>.left{
+  flex: 1;
+}
+
+#git_msg>.right{
+  text-align: right;
+  color: #999;
+  font-size: 12px;
+}
+
+.issue_prefix{
+  display: inline-block;
+  width: auto;
+  min-width: 1em;
+  margin-top: 3px;
+  padding: 1px 8px;
+  border-radius: 3px;
+
+  color: #fff;
+  font-size: .86em;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.issue_prefix[data-git-action="feat"]{
+  background-color: #584492;
+}
+
+.issue_prefix[data-git-action="fix"]{
+  background-color: #e74c3c;
+}
+
+.btn-copy{
+  padding-left: 28px;
+  background-position: 8px 50%;
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: #fafafa;
+}
