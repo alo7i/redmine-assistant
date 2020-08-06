@@ -21,7 +21,7 @@ $(document).ready(function () {
   if (!issue_matches) return;
   var issue_title = $('#content h2').text();
   var [issue_bug, id] = issue_title.split(' #')
-  var message = $('#content h3').text();
+  var message = $('#content h3').eq(0).text();
   var git_action = `${GIT_ACTION_MAP[issue_bug] || 'feat'}`
   var git_msg = `${message} - (REDMINE-${id})`;
 
